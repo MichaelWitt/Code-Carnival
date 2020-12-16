@@ -35,6 +35,9 @@ https://github.com/MichaelWitt/Code-Carnival/commits/
 
 UNC Coding Bootcamp And Trilogy for the inspiration.
 
+Educative for the Snake tutorial:
+https://www.educative.io/blog/javascript-snake-game-tutorial
+
 Thanks!
 
 ## Thanks For Visiting!

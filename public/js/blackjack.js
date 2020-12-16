@@ -29,14 +29,14 @@ const createDeck = () => {
     }
 }
 
-const createPlayers = (num) => {
+const createPlayers = () => {
     players = new Array();
 
-    for(let i = 1; i <= num; i++) {
+    for(let i = 1; i < 3; i++) {
 
         let hand = new Array();
 
-        let player = { Name: 'Player ' + i, ID: i, Points: 0, Hand: hand };
+        let player = { Name: `Player_${i}`, ID: i, Points: 0, Hand: hand };
         players.push(player);
     }
 }
@@ -44,10 +44,10 @@ const createPlayers = (num) => {
 const createPlayersUI = () => {
     $("#players").empty();
     for(let i = 0; i < players.length; i++) {
-        let div_player = document.createElement('div');
-        let div_playerid = document.createElement('div');
-        let div_hand = document.createElement('div');
-        let div_points = document.createElement('div');
+        const div_player = document.createElement('div');
+        const div_playerid = document.createElement('div');
+        const div_hand = document.createElement('div');
+        const div_points = document.createElement('div');
 
         div_points.className = 'points';
         div_points.id = 'points_' + i;
@@ -56,10 +56,10 @@ const createPlayersUI = () => {
         div_hand.id = 'hand_' + i;
 
         div_playerid.innerHTML = 'Player ' + players[i].ID;
-        div_player.append(div_playerid);
-        div_player.append(div_hand);
-        div_player.append(div_points);
-        $("#players").append(div_player);
+        div_player.appendChild(div_playerid);
+        div_player.appendChild(div_hand);
+        div_player.appendChild(div_points);
+        document.getElementById('players').appendChild(div_player);
     }
 }
 
@@ -74,19 +74,6 @@ const shuffle = () => {
         deck[location1] = deck[location2];
         deck[location2] = tmp;
     }
-}
-
-const startblackjack = () => {
-    $("#startBtn").val("restart");
-    $("#status").hide();
-    // deal 2 cards to every player object
-    currentPlayer = 0;
-    createDeck();
-    shuffle();
-    createPlayers(2);
-    createPlayersUI();
-    dealHands();
-    document.getElementById('player_' + currentPlayer).classList.add('active');
 }
 
 const dealHands = () => {
@@ -105,12 +92,18 @@ const dealHands = () => {
 }
 
 const renderCard = (card, player) => {
-    var hand = document.getElementById('hand_' + player);
-    hand.appendChild(getCardUI(card));
+    const hand = document.getElementById('hand_' + player);
+    hand.append(getCardUI(card));
+    // let hand = $(`#hand_${player}`);
+    // console.log('player:', player)
+    // console.log('hand:', hand)
+    // hand.append(getCardUI(card));
 }
 
 const getCardUI = (card) => {
-    let el = document.createElement('div');
+    var el = document.createElement('div');
+
+    ;
     let icon = '';
     if (card.Suit == 'Hearts') {
         icon='&hearts;'
@@ -127,6 +120,7 @@ const getCardUI = (card) => {
 
     el.className = 'card';
     el.innerHTML = card.Value + '<br/>' + icon;
+
     return el;
 }
 
@@ -144,6 +138,7 @@ const updatePoints = () => {
     for (let i = 0 ; i < players.length; i++) {
         getPoints(i);
         document.getElementById('points_' + i).innerHTML = players[i].Points;
+        
     }
 }
 
@@ -162,9 +157,9 @@ function hitMe()
 const stay = () => {
     // move on to next player, if any
     if (currentPlayer != players.length-1) {
-        document.getElementById('player_' + currentPlayer).classList.remove('active');
+        document.getElementById(`player_${currentPlayer}`).classList.remove('active');
         currentPlayer += 1;
-        document.getElementById('player_' + currentPlayer).classList.add('active');
+        document.getElementById(`player_${currentPlayer}`).classList.add('active');
     }
 
     else {
@@ -173,8 +168,15 @@ const stay = () => {
 }
 
 const end = () => {
+    
     let winner;
     let score = 0;
+
+    if (players[1].Points === players[0].Points) {
+        $("#status").html(`Tie!`);
+        $("#status").show();
+        end();
+    }
 
     for(let i = 0; i < players.length; i++) {
         if (players[i].Points > score && players[i].Points < 22) {
@@ -184,17 +186,20 @@ const end = () => {
         score = players[i].Points;
     }
 
-    console.log('players[winner].ID:', players[winner].ID)
     $("#status").html(`Winner: Player ${players[winner].ID}`);
     $("#status").show();
 
-    // document.getElementById('status').innerHTML = 'Winner: Player ' + players[winner].ID;
-    // document.getElementById("status").style.display = "inline-block";
 }
 
 const check = () => {
-    if (players[currentPlayer].Points > 21) {
-        $("#status").html(`Player: ${players[currentPlayer].ID} LOST`);
+    if (players[0].Points > 21) {
+        $("#status").html(`Player ${players[0].ID}: LOST`);
+        $("#status").show();
+
+        end();
+    }
+    if (players[1].Points > 21) {
+        $("#status").html(`Player ${players[1].ID}: LOST`);
         $("#status").show();
         // document.getElementById('status').style.display = "inline-block";
         end();
@@ -205,7 +210,15 @@ const updateDeck = () => {
     document.getElementById('deckcount').innerHTML = deck.length;
 }
 
-
-createDeck();
-shuffle();
-createPlayers(1);
+const startblackjack = () => {
+    $("#startBtn").val("restart");
+    $("#status").hide();
+    // deal 2 cards to every player object
+    currentPlayer = 0;
+    createDeck();
+    shuffle();
+    createPlayers(2);
+    createPlayersUI();
+    dealHands();
+    $(`player_${currentPlayer}`).addClass('active');
+}

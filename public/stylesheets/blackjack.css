@@ -1,11 +1,17 @@
-.game {
-    width: 80%;
-    border: solid 1px #ddd;
-    margin: 0 auto;
-    background: darkred;
-    border: solid 10px;
+.styleOverride {
+    background-image: url("../img/table.png");
+    background-size: 900px, 800px;
+    margin: auto;
+}
+
+.styleOverride .game{
+
+    /* border: solid 10px black; */
+    width: 90%;
+    margin: auto auto;
+    /* background: #951F1E; */
     text-align:center;
-    min-height:430px;
+    min-height: 500px;
 }
 
 .btn {
@@ -21,7 +27,7 @@
 
 .game h3 {
     padding: 10px;
-    background:black;
+    background: black;
     color:white;
 }
 
@@ -49,13 +55,14 @@
 
 .game .status {
     display: inline-block;
-    background: gold;
+    background: #EEE454;
     border: solid 5px white;
     border-radius: 10px;
     padding: 5px 20px;
     margin: 0 auto;
     margin-top: 10px;
     display:none;
+    width: 20%;
 }
 
 .players {
@@ -77,7 +84,7 @@
 }
 
 .player.active {
-    border: solid 5px #222;
+    border: solid 5px black;
 }
 
 .points {

@@ -1,0 +1,39 @@
+#snakeboard {
+	position: fixed;
+	display: block;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: auto;
+}
+
+#score {
+	text-align: center;
+	font-size: 120px;
+}
+
+#start-btn {
+	height: 40px;
+	width: 100px;
+	margin: 10px -100px;
+	position: relative;
+	top: 50%;
+	left: 50%;
+}
+
+#refresh-btn {
+	height: 40px;
+	width: 100px;
+	margin: 10px 100px;
+	position: relative;
+	top: 50%;
+	left: 50%;
+}
+
+h1 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	font-size: 80px;
+}

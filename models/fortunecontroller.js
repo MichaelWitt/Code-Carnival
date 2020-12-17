@@ -8,9 +8,10 @@ var fortune = require("../models/fortune.js");
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
   fortune.all(function(data) {
-    var ??????? = {
-      fortunes: data
-    };
-    res.render("index", ???????);
+    //var hbsObject = {
+      //fortunes: data
+    ///};
+    //console.log(hbsObject);
+    //res.render("index", hbsObject);
   });
 });

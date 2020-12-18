@@ -1,9 +1,12 @@
+body{
+    background-color: #37495D;
+}
 .game {
-    width: 80%;
-    border: solid 1px #ddd;
+    width: 86%;
+    height: 650px;
     margin: 0 auto;
-    background: darkred;
-    border: solid 10px;
+    background-image: url(../imgs/table.png);
+    background-size: 100% 100%;
     text-align:center;
     min-height:430px;
 }
@@ -19,18 +22,14 @@
     background: gray;
 }
 
-.game h3 {
-    padding: 10px;
-    background:black;
-    color:white;
-}
-
 .game .game-body {
+    margin-top: 100px;
     padding: 20px;
 }
 
 .game .game-options {
     text-align:center;
+    margin-top: 110px;
 }
 
 .game .card {
@@ -49,7 +48,7 @@
 
 .game .status {
     display: inline-block;
-    background: gold;
+    background: #EEE454;
     border: solid 5px white;
     border-radius: 10px;
     padding: 5px 20px;
@@ -67,17 +66,18 @@
 
 .player {
     width: 40%;
-    border: solid 5px #f5f5f5;
-    border-radius: 10px;
+    border: solid 5px #37495D;
+    border-radius: 30px;
     padding: 10px;
     display: inline-block;
-    margin:1%;
+    margin: 10px;
+    margin-top: 20px;
     vertical-align: top;
-    background:#f5f5f5;
+    background:#D7CEB8;
 }
 
 .player.active {
-    border: solid 5px #222;
+    border: solid 5px #EEE454;
 }
 
 .points {
@@ -88,16 +88,23 @@
 }
 
 .deck {
-    float:left;
-    background: white;
-    color:#222;
+    float: left;
+    width: 50px;
+    height: 80px;
+    font-size: 20px;
+    font-weight:bolder;
+    color: black;
+    background-image: url(../imgs/card.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
     padding: 10px;
-    border-radius:10px;
-    border: double 5px;
+    border-radius:5px;
+    border: dotted 10px;
+    border-color: #EEE454;
 }
 
 .btn {
-    background:#222;
+    background:#37495D;
     color:white !important;
     border-radius:0px;
 }

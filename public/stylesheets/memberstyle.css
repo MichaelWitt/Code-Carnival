@@ -1,0 +1,43 @@
+body{
+    background-color: #37495d;
+  }
+
+.tents{
+    max-height: 400px;
+}
+
+#blackjack{
+    position: absolute;
+    top: 230px;
+}
+
+#fortune{
+    position: absolute;
+    top: 30px;
+    left: 410px;
+}
+
+#pingpong{
+    position: absolute;
+    top: 250px;
+    left: 820px;
+}
+
+#sign{
+    max-width: 450px;
+    position: absolute;
+    top: 520px;
+    left: 90px;
+}
+
+#snake{
+    position: absolute;
+    top: 670px;
+    left: 110px;
+}
+
+#madlib{
+    position: absolute;
+    top: 670px;
+    left: 730px;
+}

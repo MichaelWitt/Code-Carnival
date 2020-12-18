@@ -1,15 +1,29 @@
+body{
+	background-image: url(../imgs/snakebackground.png);
+	background-size: 100% 210% ;
+}
+
 #snakeboard {
 	position: fixed;
 	display: block;
 	left: 0;
 	right: 0;
 	margin: auto;
-	width: auto;
+	
+	
+}
+
+#snakeboard active{
+	border: solid #951F1E 15px;
 }
 
 #score {
 	text-align: center;
 	font-size: 120px;
+	color: #EEE454;
+	border: dotted #EEE454 10px;
+	width: 20%;
+	margin:auto
 }
 
 #start-btn {
@@ -19,6 +33,9 @@
 	position: relative;
 	top: 50%;
 	left: 50%;
+	font-weight: bold;
+	color: #37495D;
+	background-color: #EEE454;
 }
 
 #refresh-btn {
@@ -28,6 +45,9 @@
 	position: relative;
 	top: 50%;
 	left: 50%;
+	font-weight: bold;
+	color: #37495D;
+	background-color: #EEE454;
 }
 
 h1 {
@@ -36,4 +56,5 @@ h1 {
 	justify-content: center;
 	text-align: center;
 	font-size: 80px;
+	color: #951F1E;
 }

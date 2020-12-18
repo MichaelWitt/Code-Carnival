@@ -12,7 +12,7 @@ Thanks for stopping in!
 
 ## Application
 
-<!-- Code Carnival: https://youtu.be/ -->
+Code Carnival: https://code-carnival.herokuapp.com/
 
 ## Build Details
 

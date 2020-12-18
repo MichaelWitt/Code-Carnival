@@ -38,8 +38,7 @@ UNC Coding Bootcamp And Trilogy for the inspiration.
 Educative for the Snake tutorial:
 https://www.educative.io/blog/javascript-snake-game-tutorial
 
-Pong tutorial:
-https://www.ansoriweb.com/2020/03/javascript-game.html
+
 
 Thanks!
 

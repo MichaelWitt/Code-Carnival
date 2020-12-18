@@ -1,4 +1,55 @@
-form.signup,
+
 form.login {
   margin-top: 50px;
+}
+
+body{
+  background-image: radial-gradient(#fdf3e8,#e9deca,#bda78d);
+}
+
+#signupbody{
+  background-image: url(../imgs/background.jpg);
+  background-size: 100%;
+}
+
+.signup{
+  max-width:50%;
+  margin-top: 300px;
+  background-color: #f5edd9;
+  padding-bottom: 20px;
+  border-width: medium;
+  border: 25px dotted #f5c026;
+  border-radius: 5px;
+}
+
+.blur-box {
+  background-color: rgba(85, 85, 85, 0);
+  box-shadow: 0 0 10px 100px rgba(85, 85, 85, 0);
+}
+
+.jumbotron{
+padding: 0px;
+margin-right: 0px;
+}
+
+#loginHeader{
+  max-width: 100%;
+}
+
+#tent{
+  width: 100%;
+  margin-top: 50px;
+  position: absolute;
+  z-index: 1;
+}
+
+#logindiv{
+  margin-top: 700px;
+  border: dotted #f5c026 20px;
+  z-index: 2;
+}
+
+h2{
+  color: #951f1e;
+  text-align: center;
 }

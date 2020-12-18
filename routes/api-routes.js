@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
 const passport = require("../config/passport");
+const Fortune = require("../models/fortunecontroller.js");
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -49,5 +50,12 @@ module.exports = function(app) {
         id: req.user.id
       });
     }
+  });
+
+  //get all api routes for fortunes
+  app.get("/api/all", function(req, res) {
+    Fortune.findAll({}).then(function(results) {
+      res.json(results);
+    });
   });
 };

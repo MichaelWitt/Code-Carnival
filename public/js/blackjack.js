@@ -1,14 +1,10 @@
-// Make player 2 automatic?
-// JQuery updates?
-// Stop ability to press start again and again without playing
-// Fix loser/winner display error
-
 const suits = ["Spades", "Hearts", "Diamonds", "Clubs"];
 const values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
 let deck = new Array();
 let players = new Array();
 let currentPlayer = 0;
 
+// Create Deck
 const createDeck = () => {
     deck = new Array();
     for (let i = 0 ; i < values.length; i++) {
@@ -29,43 +25,44 @@ const createDeck = () => {
     }
 }
 
-const createPlayers = (num) => {
+// Create players array
+const createPlayers = () => {
     players = new Array();
 
-    for(let i = 1; i <= num; i++) {
+    for(let i = 1; i < 3; i++) {
 
         let hand = new Array();
 
-        let player = { Name: 'Player ' + i, ID: i, Points: 0, Hand: hand };
+        let player = { Name: `Player_${i}`, ID: i, Points: 0, Hand: hand };
         players.push(player);
     }
 }
 
+// Create the UI for each player
 const createPlayersUI = () => {
     $("#players").empty();
     for(let i = 0; i < players.length; i++) {
-        let div_player = document.createElement('div');
-        let div_playerid = document.createElement('div');
-        let div_hand = document.createElement('div');
-        let div_points = document.createElement('div');
+        const div_player = document.createElement('div');
+        const div_playerid = document.createElement('div');
+        const div_hand = document.createElement('div');
+        const div_points = document.createElement('div');
 
         div_points.className = 'points';
-        div_points.id = 'points_' + i;
-        div_player.id = 'player_' + i;
+        div_points.id = `points_${i}`;
+        div_player.id = `player_${i}`;
         div_player.className = 'player';
-        div_hand.id = 'hand_' + i;
+        div_hand.id = `hand_${i}`;
 
-        div_playerid.innerHTML = 'Player ' + players[i].ID;
-        div_player.append(div_playerid);
-        div_player.append(div_hand);
-        div_player.append(div_points);
-        $("#players").append(div_player);
+        div_playerid.innerHTML = `Player ${players[i].ID}`;
+        div_player.appendChild(div_playerid);
+        div_player.appendChild(div_hand);
+        div_player.appendChild(div_points);
+        document.getElementById('players').appendChild(div_player);
     }
 }
 
+// Shuffle the cards
 const shuffle = () => {
-    // for 1000 turns
-    // switch the values of two random cards
     for (let i = 0; i < 1000; i++) {
         let location1 = Math.floor((Math.random() * deck.length));
         let location2 = Math.floor((Math.random() * deck.length));
@@ -76,22 +73,8 @@ const shuffle = () => {
     }
 }
 
-const startblackjack = () => {
-    $("#startBtn").val("restart");
-    $("#status").hide();
-    // deal 2 cards to every player object
-    currentPlayer = 0;
-    createDeck();
-    shuffle();
-    createPlayers(2);
-    createPlayersUI();
-    dealHands();
-    document.getElementById('player_' + currentPlayer).classList.add('active');
-}
-
+// Deal the cards to each player
 const dealHands = () => {
-    // alternate handing cards to each player
-    // 2 cards each
     for(let i = 0; i < 2; i++) {
         for (let x = 0; x < players.length; x++) {
             let card = deck.pop();
@@ -100,18 +83,20 @@ const dealHands = () => {
             updatePoints();
         }
     }
-
     updateDeck();
 }
 
+// Render the card
 const renderCard = (card, player) => {
-    var hand = document.getElementById('hand_' + player);
-    hand.appendChild(getCardUI(card));
+    const hand = document.getElementById(`hand_${player}`);
+    hand.append(getCardUI(card));
 }
 
+// Get the card UI
 const getCardUI = (card) => {
-    let el = document.createElement('div');
+    const el = document.createElement('div');
     let icon = '';
+
     if (card.Suit == 'Hearts') {
         icon='&hearts;'
     }
@@ -127,10 +112,11 @@ const getCardUI = (card) => {
 
     el.className = 'card';
     el.innerHTML = card.Value + '<br/>' + icon;
+
     return el;
 }
 
-// returns the number of points that a player has in hand
+// Gets the points a player has
 const getPoints = (player) => {
     let points = 0;
     for(let i = 0; i < players[player].Hand.length; i++) {
@@ -140,18 +126,17 @@ const getPoints = (player) => {
     return points;
 }
 
+// Updates the points each player has
 const updatePoints = () => {
     for (let i = 0 ; i < players.length; i++) {
         getPoints(i);
-        document.getElementById('points_' + i).innerHTML = players[i].Points;
+        document.getElementById(`points_${i}`).innerHTML = players[i].Points;
     }
 }
 
-function hitMe()
-{
-    // pop a card from the deck to the current player
-    // check if current player new points are over 21
-    var card = deck.pop();
+// Hit Me Function
+const hitMe = () => {
+    const card = deck.pop();
     players[currentPlayer].Hand.push(card);
     renderCard(card, currentPlayer);
     updatePoints();
@@ -159,53 +144,68 @@ function hitMe()
     check();
 }
 
+// Stay Function
 const stay = () => {
-    // move on to next player, if any
     if (currentPlayer != players.length-1) {
-        document.getElementById('player_' + currentPlayer).classList.remove('active');
+        document.getElementById(`player_${currentPlayer}`).classList.remove('active');
         currentPlayer += 1;
-        document.getElementById('player_' + currentPlayer).classList.add('active');
+        document.getElementById(`player_${currentPlayer}`).classList.add('active');
     }
-
     else {
         end();
     }
 }
 
+// Run final point check for each player
 const end = () => {
     let winner;
     let score = 0;
+
+    if (players[1].Points === players[0].Points) {
+        $("#status").html(`Tie!`);
+        $("#status").show();
+    }
 
     for(let i = 0; i < players.length; i++) {
         if (players[i].Points > score && players[i].Points < 22) {
             winner = i;
         }
-
         score = players[i].Points;
     }
 
-    console.log('players[winner].ID:', players[winner].ID)
     $("#status").html(`Winner: Player ${players[winner].ID}`);
     $("#status").show();
-
-    // document.getElementById('status').innerHTML = 'Winner: Player ' + players[winner].ID;
-    // document.getElementById("status").style.display = "inline-block";
 }
 
+// Check if a player has more than 21 points
 const check = () => {
-    if (players[currentPlayer].Points > 21) {
-        $("#status").html(`Player: ${players[currentPlayer].ID} LOST`);
+    if (players[0].Points > 21) {
+        $("#status").html(`Player ${players[0].ID} Lost`);
         $("#status").show();
-        // document.getElementById('status').style.display = "inline-block";
+        end();
+    }
+    if (players[1].Points > 21) {
+        $("#status").html(`Player ${players[1].ID} Lost`);
+        $("#status").show();
         end();
     }
 }
 
+// Update the deck count
 const updateDeck = () => {
     document.getElementById('deckcount').innerHTML = deck.length;
 }
 
+// Start the game
+const startblackjack = () => {
+    $("#startBtn").val("restart");
+    $("#status").hide();
 
-createDeck();
-shuffle();
-createPlayers(1);
+    currentPlayer = 0;
+    createDeck();
+    shuffle();
+    createPlayers(2);
+    createPlayersUI();
+    dealHands();
+    $(`player_${currentPlayer}`).addClass('active');
+}

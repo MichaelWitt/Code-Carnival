@@ -12,7 +12,7 @@ body{
 }
 
 .btn {
-    border:none;
+    border: solid 2px black;
     padding: 10px 30px;
     border-radius:10px;
     cursor:pointer;
@@ -42,8 +42,9 @@ body{
     border-radius: 10px;
     font-size: 10pt;
     text-align: center;
-    margin: 3px;
     border:solid 3px;
+    margin: 5px;
+    margin-top: 10px;
 }
 
 .game .status {
@@ -53,14 +54,14 @@ body{
     border-radius: 10px;
     padding: 5px 20px;
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 20px;
     display:none;
+    width: 20%;
 }
 
 .players {
     width: 500px;
     margin: 0 auto;
-    margin-top: 20px;
     text-align: center;
 }
 
@@ -74,6 +75,7 @@ body{
     margin-top: 20px;
     vertical-align: top;
     background:#D7CEB8;
+    font-size: 20px;
 }
 
 .player.active {
@@ -91,9 +93,9 @@ body{
     float: left;
     width: 50px;
     height: 80px;
-    font-size: 20px;
-    font-weight:bolder;
     color: black;
+    font-size: 30px;
+    font-weight:bolder;
     background-image: url(../imgs/card.png);
     background-repeat: no-repeat;
     background-size: 100%;

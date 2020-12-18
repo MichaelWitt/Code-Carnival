@@ -38,6 +38,8 @@ UNC Coding Bootcamp And Trilogy for the inspiration.
 Educative for the Snake tutorial:
 https://www.educative.io/blog/javascript-snake-game-tutorial
 
+Blackjack Tutorial: https://www.thatsoftwaredude.com/content/6417/how-to-code-blackjack-using-javascript
+
 Thanks!
 
 ## Thanks For Visiting!

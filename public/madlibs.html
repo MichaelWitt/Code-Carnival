@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Read.Me a Story</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
+  <link href="stylesheets/madlibs.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Montserrat&display=swap" rel="stylesheet"> 
+</head>
+
+<body>
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/logout">
+        Logout
+      </a>
+    </div>
+  </div>
+</nav>
+  <div class="container">
+    <div class="row">
+      <div id="answerForm">
+        <h1> READ.ME A STORY </h1>
+        <h4>Fill out the form to see your story come to life.</h4>
+        <hr>
+        <form role="form">
+            <div class="form-group">
+                <label for="name"> Name </label>
+                <input id="name" class="form-control name" type="text" placeholder="Enter a Name">
+            </div>
+            <div class="form-group">
+                <label for="country"> Country </label>
+                <input id="country" class="form-control country" type="text" placeholder="Enter a country">
+            </div>
+            
+            <div class="form-group">
+                <label for="job"> Job </label>
+                <input id="job" class="form-control job" type="text" placeholder="Enter a job">
+            </div>
+            <div class="form-group">
+                <label for="color"> Color </label>
+                <input id="color" class="form-control color" type="text" placeholder="Enter a color">
+            </div>
+            <div class="form-group">
+                <label for="animal"> Animal </label>
+                <input id="animal" class="form-control animal" type="text" placeholder="Enter an animal">
+            </div>
+            <div class="form-group">
+                <label for="animal"> Another Name </label>
+                <input id="animalName" class="form-control animalName" type="text" placeholder="Enter a name">
+            </div>
+        </form>
+      </div>
+      <button id="btn-click" type="submit" class="btn btn-primary btn-lg">Tell Me a Story!</button>
+      <button type="submit" class="btn btn-primary btn-lg" id="play">Play Again?</button>
+    </hr>
+    </div>
+<br>
+<div id="story">
+    <h1>StoryTime Below</h1>
+    <hr>
+    <p>One day  <span class="name"></span> was walking down the street, and ran into a man who looked like a wizard! 
+        He said he was going on a trip to <span class="country"></span> if they wanted to come along.
+         <span class="name"></span> had always wanted to go there, and agreed to come.<br><br>
+           When the man turned the street corner,
+          there was a portal at the end of the road.
+         They were transported, and told they could start a new life. 
+         A small <span class="color"> </span> cottage appeared, with a sign on the door that said "Welcome. You will begin
+         your new job as a   <span class="job"> </span> tomorrow." <br><br>
+         After going inside, it turned out someone was already living there.
+             It was a pet <span class="animal"></span> named  <span class="animalName"></span>, who looked ecstactic 
+             to have a new roommate.
+
+    </span></p>
+  </div>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/madlibs.js"></script>
+
+</body>
+
+</html>

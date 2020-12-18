@@ -1,0 +1,21 @@
+.container {
+    padding-top:10px;
+     max-width:350px;
+}
+
+h1 {
+    font-family: 'Fugaz One', cursive;
+    color:#EEE454;
+}
+
+h4 {
+    color:#D7CEB8;
+    font-family: 'Fugaz One', cursive;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+body {
+    background-color: #37495D;
+    color: #D7CEB8;
+}

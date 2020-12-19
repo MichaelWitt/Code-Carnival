@@ -12,7 +12,10 @@ Thanks for stopping in!
 
 ## Application
 
-<!-- Code Carnival: https://youtu.be/ -->
+Code Carnival: https://code-carnival.herokuapp.com/
+
+Welcome: ![Screenshot](./public/imgs/code-carnival-readme.png)
+Step Right Up: ![Screenshot](./public/imgs/tent-readme.png)
 
 ## Build Details
 
@@ -22,8 +25,8 @@ This application was developed using: MySql, JavaScript, Express, Passport, Sequ
 
 View the repository at: https://github.com/MichaelWitt/Code-Carnival
 
-<!-- Preview: ![Screenshot](./assets/img/code-carnival.png)
-Demo: ![Screenshot](./assets/img/carnival-demo.png) -->
+Preview: ![Screenshot](./public/imgs/carnival-readme.png)
+Demo: ![Screenshot](./public/imgs/black-jack-readme.png)
 
 ## Updates
 
@@ -35,10 +38,10 @@ https://github.com/MichaelWitt/Code-Carnival/commits/
 
 UNC Coding Bootcamp And Trilogy for the inspiration.
 
-Educative for the Snake tutorial:
+Snake Tutorial:
 https://www.educative.io/blog/javascript-snake-game-tutorial
 
-Pong tutorial:
+Pong Tutorial:
 https://www.ansoriweb.com/2020/03/javascript-game.html
 
 Thanks!

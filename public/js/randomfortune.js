@@ -1,4 +1,23 @@
-  //add event listener to query the random function when the button is pressed
-  document.getElementById("myBtn").addEventListener("click", function() {
-    document.getElementById("demo").innerHTML = queryRandomFortune
-  });
+
+    //document.getElementById("fortunesdiv").innerHTML = queryRandomFortune
+ // });
+
+ // When user clicks fortune teller tent
+$("#fortune").on("click", function(event) {
+  event.preventDefault();
+
+// When the page loads, grab all of our fortunes
+$.get("/api/all", function(data) {
+
+  if (data.length !== 0) {
+
+    for (var i = 0; i < data.length; i++) {
+
+      document.getElementById("fortunesdiv").innerHTML = queryRandomFortune
+
+    }
+
+  }
+
+});
+});

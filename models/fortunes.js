@@ -7,28 +7,18 @@ var connection = mysql.createConnection({
   port: 3306,
 
   // Your username
-  user: "root",
+  user: "s0djs424aadzszp0",
 
   // Your password
-  password: "cosmo120",
-  database: "fortunes_db"
+  password: "t7i829g5fdl608kr",
+  database: "ecz2fnash4nww330"
 });
 
 connection.connect(function(err) {
   if (err) throw err;
   console.log("connected as id " + connection.threadId);
-  // queryAllFortunes();
   queryRandomFortune
 });
-
-// function queryAllFortunes() {
-//     connection.query("SELECT * FROM fortunes", function(err, res) {
-//       if (err) throw err;
-//       for (var i = 0; i < res.length; i++) {
-//       }
-//       console.log("-----------------------------------");
-//     });
-//   }
 
   function queryRandomFortune() {
       connection.query("SELECT * FROM fortunes ORDER BY RAND() LIMIT 1;", function(err, res) {
@@ -38,4 +28,6 @@ connection.connect(function(err) {
         }
       })
   }
+
+  module.exports = queryRandomFortune;
 

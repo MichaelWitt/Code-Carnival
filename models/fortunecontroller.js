@@ -12,3 +12,5 @@ router.get("/", function(req, res) {
     res.send();
   });
 });
+
+module.exports = router;

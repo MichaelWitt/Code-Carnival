@@ -44,8 +44,9 @@ margin-right: 0px;
 }
 
 #logindiv{
+  margin-left: 25%;
   margin-top: 700px;
-  border: dotted #f5c026 20px;
+  border: dotted #EEE454 20px;
   z-index: 2;
 }
 

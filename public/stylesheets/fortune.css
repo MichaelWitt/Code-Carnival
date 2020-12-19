@@ -1,0 +1,19 @@
+body{
+    background-color: #37495D;
+}
+#sign{
+	max-width: 100px;
+}
+
+#fortunediv{
+    border: 20px dotted #EEE454;
+    background-image: radial-gradient(#fdf3e8,#e9deca,#bda78d)}
+
+#fortune{
+    max-width: 100%;
+}
+
+.btn{
+    background-color: #37495D;
+    margin-left: 38%;
+}

@@ -1,13 +1,18 @@
 
 body{
 	background-image: url(../imgs/pongbackground.jpg);
-	background-size: 100% ;
+	background-size: 100% 290%;
+}
+
+#sign{
+	max-width: 100px;
 }
 
 #pong {
-	border: 20px dotted #EEE454;
+	border: 20px dotted #951F1E ;
 	position: fixed;
 	margin: auto;
+	margin-top: 10px;
 	left: 0;
 	right: 0;
 	width: auto;
@@ -22,8 +27,8 @@ body{
 	top: 50%;
 	left: 50%;
 	font-weight: bold;
-	color: #37495D;
-	background-color: #EEE454;
+	color: blanchedalmond;
+	background-color: #951F1E;
 }
 
 #refresh-btn {
@@ -34,8 +39,8 @@ body{
 	top: 50%;
 	left: 50%;
 	font-weight: bold;
-	color: #37495D;
-	background-color: #EEE454;
+	color: blanchedalmond;
+	background-color: #951F1E;
 }
 
 h1 {
@@ -43,6 +48,8 @@ h1 {
 	flex-direction: column;
 	justify-content: center;
 	text-align: center;
-	font-size: 80px;
+	font-size: 70px;
 	color: #951F1E;
+	
 }
+

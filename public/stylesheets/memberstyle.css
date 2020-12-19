@@ -2,6 +2,9 @@ body{
     background-color: #37495d;
   }
 
+  #header{
+	max-width: 100px;
+}
 .tents{
     max-height: 400px;
 }
@@ -27,7 +30,7 @@ body{
     max-width: 450px;
     position: absolute;
     top: 520px;
-    left: 90px;
+    left: 380px;
 }
 
 #snake{

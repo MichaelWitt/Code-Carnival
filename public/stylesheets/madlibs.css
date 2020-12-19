@@ -1,21 +1,42 @@
 .container {
-    padding-top:10px;
-     max-width:350px;
+    background-image: url(../imgs/scroll.png);
+    background-size: 100% 100%;
+    padding-top: 90px;
+     max-width:500px;
+     height: 850px;
 }
+#story{
+    color:#37495D;
+    margin-top: 10px;
+}
+#answerForm{
+    max-height: 700px;
+    max-width: 400px;
+}
+
 
 h1 {
     font-family: 'Fugaz One', cursive;
-    color:#EEE454;
+    color:#951F1E;
 }
 
 h4 {
-    color:#D7CEB8;
+    color:#37495D;
+    font-weight: bold;
     font-family: 'Fugaz One', cursive;
     font-family: 'Montserrat', sans-serif;
-
 }
 
 body {
     background-color: #37495D;
-    color: #D7CEB8;
+    color: #37495D;
+}
+
+#play{
+    margin-top: 20px;
+margin-left: 180px;
+}
+
+#btn-click{
+    margin-left: 200px;
 }

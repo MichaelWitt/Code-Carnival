@@ -2,15 +2,16 @@ body{
 	background-image: url(../imgs/snakebackground.png);
 	background-size: 100% 210% ;
 }
+#sign{
+	max-width: 100px;
+}
 
 #snakeboard {
 	position: fixed;
 	display: block;
 	left: 0;
 	right: 0;
-	margin: auto;
-	
-	
+	margin: auto;	
 }
 
 #snakeboard active{

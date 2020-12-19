@@ -8,6 +8,10 @@ $(document).ready(function(){
 
     e.preventDefault()
     
+    var random = Math.floor(Math.random() * $('.tale').length);
+    $('.tale').hide().eq(random).show();
+
+
   $("#story").show();
   
   $("#btn-click").hide();

@@ -1,6 +1,10 @@
 body{
     background-color: #37495D;
 }
+
+#sign{
+	max-width: 100px;
+}
 .game {
     width: 86%;
     height: 650px;
@@ -91,8 +95,10 @@ body{
 
 .deck {
     float: left;
-    width: 50px;
-    height: 80px;
+    width: 90px;
+    height: 120px;
+    font-size: 20px;
+    font-weight:bolder;
     color: black;
     font-size: 30px;
     font-weight:bolder;

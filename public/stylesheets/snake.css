@@ -1,6 +1,6 @@
 body{
 	background-image: url(../imgs/snakebackground.png);
-	background-size: 100% 210% ;
+	background-size: 100% 200% ;
 }
 #sign{
 	max-width: 100px;
@@ -20,10 +20,10 @@ body{
 
 #score {
 	text-align: center;
-	font-size: 120px;
+	font-size: 110px;
 	color: #EEE454;
 	border: dotted #EEE454 10px;
-	width: 20%;
+	width: 15%;
 	margin:auto
 }
 
@@ -56,6 +56,6 @@ h1 {
 	flex-direction: column;
 	justify-content: center;
 	text-align: center;
-	font-size: 80px;
+	font-size: 70px;
 	color: #951F1E;
 }

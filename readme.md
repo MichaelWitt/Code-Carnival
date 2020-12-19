@@ -44,6 +44,9 @@ https://www.educative.io/blog/javascript-snake-game-tutorial
 Pong Tutorial:
 https://www.ansoriweb.com/2020/03/javascript-game.html
 
+Blackjack Tutorial:
+https://www.thatsoftwaredude.com/content/6417/how-to-code-blackjack-using-javascript
+
 Thanks!
 
 ## Thanks For Visiting!
